@@ -9,6 +9,9 @@ html {
 	overflow: overlay;
 	min-height: 110vh;
 }
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
 .wrapper {
 	background-image: url("../images/background.png");
 	background-position: center center;
@@ -18,11 +21,11 @@ html {
 	min-width: 100vw;
 	min-height: 110vh;
 }
-.wrapper::before {
+.wrapper-overlay {
 	content: "";
 	position: absolute;
-	width: 100vw;
-	height: 110vh;
+	min-width: 100vw;
+	min-height: 110vh;
 	left: 0;
 	top: 0;
 	background-color: rgba(224, 224, 224, 0.2);
@@ -61,7 +64,7 @@ ul {
 }
 /* End Main Rules */
 /* Start Box */
-.box {
+.main-box {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -70,31 +73,35 @@ ul {
 	z-index: 2;
 	background-color: rgba(185, 40, 40, 0.54);
 	border-radius: 6px;
-	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	opacity: 1;
+	transition: 0.5s;
 }
-.box .logo {
+.main-box .logo {
 	padding: 0 160px;
+	animation: showlogo 0.8s;
 }
-.box .logo img {
+.main-box .logo img {
 	max-width: 450px;
 }
-.box h2 {
+.main-box h2 {
 	margin-top: 0px;
 	font-size: 40px;
 	color: #1c0202;
 	font-weight: 900;
 	max-width: 78%;
 	margin-bottom: 0;
+	animation: showother 1s;
 }
-.box p {
+.main-box p {
 	margin: 10px 0 40px 0;
 	max-width: 68%;
+	animation: showother 1s;
 }
-.box button {
+.main-box button {
 	color: white;
 	background-color: rgb(255 255 255 / 24%);
 	border: 5px solid #fff;
@@ -105,8 +112,146 @@ ul {
 	cursor: pointer;
 	transition: 0.5s;
 	width: 178px;
+	animation: showother 1.3s;
 }
-.box button:hover {
+.main-box button:hover {
 	width: 200px;
 }
+.first-box {
+	width: 60%;
+	position: absolute;
+	left: 50%;
+	top: 98%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(185, 40, 40, 0.54);
+	text-align: center;
+	border-radius: 6px;
+	padding-left: 100px;
+	padding-right: 100px;
+	display: none;
+}
+.first-box h3 {
+	font-size: 30px;
+	padding-top: 30px;
+	font-family: serif;
+	animation: 1s showother;
+}
+.first-box .ques {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(255 255 255 / 24%);
+	border-radius: 20px;
+	max-width: 80%;
+	margin: auto;
+	margin-bottom: 15px;
+	padding: 5px;
+	border: 1px solid white;
+	max-width: 400px;
+	cursor: pointer;
+	position: relative;
+	animation: 1s showother;
+}
+.first-box .ques .overlay {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(255 255 255 / 29%);
+	height: 100%;
+	width: 0;
+	border-radius: 20px;
+	transition: 0.5s;
+}
+.first-box .ques p {
+	text-transform: uppercase;
+	font-size: 14px;
+	flex: 1;
+	max-width: 80%;
+}
+.first-box label {
+	position: relative;
+}
+.first-box .ques input {
+	display: none;
+}
+.first-box .icon-contanier {
+	position: absolute;
+	right: 15px;
+	border-radius: 50%;
+	border: 2px solid white;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+}
+.first-box .icon-contanier i {
+	font-size: 14px;
+	transform: scale(0);
+	transition: 0.3s;
+}
+.first-box .ques input:checked + .icon-contanier i {
+	transform: scale(1);
+}
+.first-box .first-next {
+	color: white;
+	background-color: rgb(255 255 255 / 24%);
+	padding: 20px 60px;
+	border-radius: 25px;
+	margin-top: 50px;
+	border: 1px solid white;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.first-box .first-next:hover {
+	padding-right: 70px;
+	padding-left: 70px;
+}
+.first-box .first-back {
+	display: block;
+	color: white;
+	background-color: rgb(255 255 255 / 24%);
+	padding: 20px 60px;
+	border-radius: 25px;
+	margin-top: 50px;
+	border: 1px solid white;
+	margin-bottom: 90px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.first-box .first-back:hover {
+	padding-right: 70px;
+	padding-left: 70px;
+}
 /* End Box */
+/* Start Animations */
+@keyframes showlogo {
+	0% {
+		transform: translateY(20px);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes showother {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes fill {
+	100% {
+		background-color: rgb(255 255 255 / 38%);
+	}
+}
+/* End Animations */
