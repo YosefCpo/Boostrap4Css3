@@ -79,9 +79,11 @@ ul {
 	flex-direction: column;
 	opacity: 1;
 	transition: 0.5s;
+	min-width: 70vw;
 }
 .main-box .logo {
-	padding: 0 160px;
+	/* padding: 0 160px; */
+	margin: auto;
 	animation: showlogo 0.8s;
 }
 .main-box .logo img {
@@ -120,7 +122,7 @@ ul {
 	width: 200px;
 }
 .first-box {
-	width: 60%;
+	min-width: 70%;
 	position: absolute;
 	left: 50%;
 	top: 98%;
@@ -128,8 +130,7 @@ ul {
 	background-color: rgba(185, 40, 40, 0.54);
 	text-align: center;
 	border-radius: 6px;
-	padding-left: 100px;
-	padding-right: 100px;
+	margin: auto;
 	display: none;
 	transition: 0.5s;
 }
@@ -225,6 +226,7 @@ ul {
 	margin-bottom: 90px;
 	cursor: pointer;
 	transition: 0.5s;
+	margin-left: 50px;
 }
 .first-box .first-back:hover {
 	padding-right: 70px;
@@ -347,6 +349,9 @@ ul {
 	display: none;
 	transition: 0.5s;
 	opacity: 1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .third-box h3 {
 	font-size: 30px;
@@ -354,76 +359,56 @@ ul {
 	font-family: serif;
 	animation: 1s showother;
 }
-.third-box .ques {
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: rgb(255 255 255 / 24%);
-	border-radius: 20px;
-	max-width: 80%;
-	margin: auto;
-	margin-bottom: 15px;
-	padding: 5px;
-	border: 1px solid white;
-	max-width: 400px;
-	cursor: pointer;
+.third-box .box {
+	margin-bottom: 30px;
 	position: relative;
-	animation: 1s showother;
-	transition: 1s;
-	opacity: 1;
-	transform: translateX(0);
-}
-.third-box .ques .overlay {
-	content: "";
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background-color: rgb(255 255 255 / 29%);
-	height: 100%;
-	width: 0;
-	border-radius: 20px;
-	transition: 0.5s;
-}
-.third-box .ques p {
-	text-transform: uppercase;
-	font-size: 14px;
-	flex: 1;
-	max-width: 80%;
 }
 .third-box label {
-	position: relative;
-}
-.third-box .ques input {
-	display: none;
-}
-.third-box .icon-contanier {
 	position: absolute;
-	right: 15px;
-	border-radius: 50%;
-	border: 2px solid white;
-	width: 30px;
-	height: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: transparent;
+	font-size: 20px;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	animation: showlabel 0.7s;
 }
-.third-box .icon-contanier .icon {
-	width: 85%;
-	height: 80%;
-	background-color: white;
-	border-radius: 50%;
-	transform: scale(0);
-	transition: 0.3s;
+.third-box input {
+	font-size: 20px;
+	width: 400px;
+	margin: auto;
+	height: 50px;
+	display: block;
+	border-radius: 10px;
+	border: 1px solid white;
+	background-color: rgb(224 255 250 / 28%);
+	animation: showother 1s;
 }
-.third-box .ques input:checked + .icon-contanier .icon {
-	transform: scale(1);
+.third-box .box input[name="name"] {
+	padding-left: 70px;
+}
+.third-box .box input[name="email"] {
+	padding-left: 70px;
+}
+.third-box .box input[name="phone"] {
+	padding-left: 75px;
+}
+.third-box .third-next {
+	display: block;
+	color: white;
+	background-color: rgb(255 255 255 / 24%);
+	border: 1px solid white;
+	padding: 18px 60px;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: 0.5s;
+	margin-top: 30px;
+}
+.third-box .third-next:hover {
+	padding-left: 70px;
+	padding-right: 70px;
 }
 .third-box .third-back {
 	display: block;
-	margin: 60px 0;
+	margin: 40px 0 30px 0;
 	color: white;
 	background-color: rgb(255 255 255 / 24%);
 	border: 1px solid white;
@@ -435,6 +420,55 @@ ul {
 .third-box .third-back:hover {
 	padding-left: 70px;
 	padding-right: 70px;
+}
+@media (max-width: 800px) {
+	.main-box {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		height: 110vh;
+		padding-top: 60px;
+	}
+	.main-box .logo {
+		margin: auto;
+		width: 100vw;
+	}
+	.main-box .logo img {
+		max-width: 300px;
+	}
+	.first-box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		height: 200vh;
+		padding-top: 60px;
+	}
+	.second-box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		height: 110vh;
+		padding-top: 60px;
+	}
+	.third-box {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		height: 110vh;
+		padding-top: 60px;
+	}
 }
 /* End Box */
 /* Start Animations */
@@ -461,6 +495,14 @@ ul {
 @keyframes fill {
 	100% {
 		background-color: rgb(255 255 255 / 38%);
+	}
+}
+@keyframes showlabel {
+	0% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }
 /* End Animations */

@@ -72,7 +72,7 @@ document.querySelectorAll(".second-box .ques").forEach((ques) => {
 					document.getElementsByClassName("second-box")[0].style.display =
 						"none";
 					document.getElementsByClassName("third-box")[0].style.display =
-						"block";
+						"flex";
 					document.getElementsByClassName("third-box")[0].style.opacity = "1";
 					document.getElementsByClassName("wrapper")[0].style.minHeight =
 						"110vh";
