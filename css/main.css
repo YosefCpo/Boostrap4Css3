@@ -7,7 +7,7 @@
 html {
 	scroll-behavior: smooth;
 	overflow: overlay;
-	min-height: 110vh;
+	min-height: 100vh;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -19,13 +19,13 @@ body {
 	background-size: cover;
 	position: relative;
 	min-width: 100vw;
-	min-height: 110vh;
+	height: 100vh;
 }
 .wrapper-overlay {
 	content: "";
 	position: absolute;
 	min-width: 100vw;
-	min-height: 110vh;
+	height: 100vh;
 	left: 0;
 	top: 0;
 	background-color: rgba(224, 224, 224, 0.2);
@@ -429,7 +429,7 @@ ul {
 		top: 0;
 		left: 0;
 		transform: translate(0);
-		height: 110vh;
+		height: 100vh;
 		padding-top: 60px;
 	}
 	.main-box .logo {
@@ -456,7 +456,7 @@ ul {
 		top: 0;
 		left: 0;
 		transform: translate(0);
-		height: 110vh;
+		height: 100vh;
 		padding-top: 60px;
 	}
 	.third-box {
@@ -466,7 +466,7 @@ ul {
 		top: 0;
 		left: 0;
 		transform: translate(0);
-		height: 110vh;
+		height: 100vh;
 		padding-top: 60px;
 	}
 }
