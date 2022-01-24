@@ -4,8 +4,8 @@ document.getElementById("start-now").addEventListener("click", (e) => {
 		document.getElementsByClassName("main-box")[0].style.display = "none";
 		document.getElementsByClassName("first-box")[0].style.display = "block";
 		document.getElementsByClassName("first-box")[0].style.opacity = "1";
-		document.getElementsByClassName("wrapper")[0].style.minHeight = "200vh";
-		document.getElementsByClassName("wrapper-overlay")[0].style.minHeight =
+		document.getElementsByClassName("wrapper")[0].style.height = "200vh";
+		document.getElementsByClassName("wrapper-overlay")[0].style.height =
 			"200vh";
 	}, 500);
 });
